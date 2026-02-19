@@ -69,7 +69,11 @@ type ContentRelationshipFieldWithData<
   >;
 }[Exclude<TCustomType[number], string>["id"]];
 
-type DashboardDocumentDataSlicesSlice = HeroSlice;
+type DashboardDocumentDataSlicesSlice =
+  | CollectionSectionSlice
+  | AboutSlice
+  | LogoSectionSlice
+  | HeroSlice;
 
 /**
  * Content for dashboard documents
@@ -227,6 +231,242 @@ export type SettingsDocument<Lang extends string = string> =
 export type AllDocumentTypes = DashboardDocument | SettingsDocument;
 
 /**
+ * Primary content in *AboutSection → Default → Primary*
+ */
+export interface AboutSliceDefaultPrimary {
+  /**
+   * title field in *AboutSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * subtitle field in *AboutSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about.default.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  subtitle: prismic.RichTextField;
+
+  /**
+   * about_image field in *AboutSection → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about.default.primary.about_image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  about_image: prismic.ImageField<never>;
+
+  /**
+   * heading field in *AboutSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * description field in *AboutSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * show_button field in *AboutSection → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: about.default.primary.show_button
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  show_button: prismic.BooleanField;
+
+  /**
+   * button_text field in *AboutSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about.default.primary.button_text
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  button_text: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for AboutSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type AboutSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<AboutSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *AboutSection*
+ */
+type AboutSliceVariation = AboutSliceDefault;
+
+/**
+ * AboutSection Shared Slice
+ *
+ * - **API ID**: `about`
+ * - **Description**: About
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type AboutSlice = prismic.SharedSlice<"about", AboutSliceVariation>;
+
+/**
+ * Item in *CollectionSection → Default → Primary → items*
+ */
+export interface CollectionSectionSliceDefaultPrimaryItemsItem {
+  /**
+   * nft_image field in *CollectionSection → Default → Primary → items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: collection_section.default.primary.items[].nft_image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  nft_image: prismic.ImageField<never>;
+
+  /**
+   * nft_title field in *CollectionSection → Default → Primary → items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: collection_section.default.primary.items[].nft_title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  nft_title: prismic.KeyTextField;
+
+  /**
+   * author field in *CollectionSection → Default → Primary → items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: collection_section.default.primary.items[].author
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  author: prismic.KeyTextField;
+
+  /**
+   * bid field in *CollectionSection → Default → Primary → items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: collection_section.default.primary.items[].bid
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  bid: prismic.KeyTextField;
+
+  /**
+   * category field in *CollectionSection → Default → Primary → items*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: collection_section.default.primary.items[].category
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  category: prismic.SelectField<"Sport" | "Photograpy" | "Pattern">;
+}
+
+/**
+ * Primary content in *CollectionSection → Default → Primary*
+ */
+export interface CollectionSectionSliceDefaultPrimary {
+  /**
+   * title field in *CollectionSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: collection_section.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * subtitle field in *CollectionSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: collection_section.default.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  subtitle: prismic.RichTextField;
+
+  /**
+   * show_tabs field in *CollectionSection → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: collection_section.default.primary.show_tabs
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  show_tabs: prismic.BooleanField;
+
+  /**
+   * items field in *CollectionSection → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: collection_section.default.primary.items[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  items: prismic.GroupField<
+    Simplify<CollectionSectionSliceDefaultPrimaryItemsItem>
+  >;
+}
+
+/**
+ * Default variation for CollectionSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type CollectionSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CollectionSectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *CollectionSection*
+ */
+type CollectionSectionSliceVariation = CollectionSectionSliceDefault;
+
+/**
+ * CollectionSection Shared Slice
+ *
+ * - **API ID**: `collection_section`
+ * - **Description**: CollectionSection
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type CollectionSectionSlice = prismic.SharedSlice<
+  "collection_section",
+  CollectionSectionSliceVariation
+>;
+
+/**
  * Item in *Hero → Default → Primary → Buttons*
  */
 export interface HeroSliceDefaultPrimaryButtonsItem {
@@ -374,6 +614,86 @@ type HeroSliceVariation = HeroSliceDefault;
  */
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
+/**
+ * Item in *LogoSection → Default → Primary → logos*
+ */
+export interface LogoSectionSliceDefaultPrimaryLogosItem {
+  /**
+   * LogoSection field in *LogoSection → Default → Primary → logos*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: logo_section.default.primary.logos[].logosection
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  logosection: prismic.ImageField<never>;
+
+  /**
+   * alt_text field in *LogoSection → Default → Primary → logos*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: logo_section.default.primary.logos[].alt_text
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  alt_text: prismic.KeyTextField;
+
+  /**
+   * size field in *LogoSection → Default → Primary → logos*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: logo_section.default.primary.logos[].size
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  size: prismic.SelectField<"default" | "big" | "small">;
+}
+
+/**
+ * Primary content in *LogoSection → Default → Primary*
+ */
+export interface LogoSectionSliceDefaultPrimary {
+  /**
+   * logos field in *LogoSection → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: logo_section.default.primary.logos[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  logos: prismic.GroupField<Simplify<LogoSectionSliceDefaultPrimaryLogosItem>>;
+}
+
+/**
+ * Default variation for LogoSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type LogoSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<LogoSectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *LogoSection*
+ */
+type LogoSectionSliceVariation = LogoSectionSliceDefault;
+
+/**
+ * LogoSection Shared Slice
+ *
+ * - **API ID**: `logo_section`
+ * - **Description**: LogoSection
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type LogoSectionSlice = prismic.SharedSlice<
+  "logo_section",
+  LogoSectionSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -402,12 +722,26 @@ declare module "@prismicio/client" {
       SettingsDocumentData,
       SettingsDocumentDataNavigationItem,
       AllDocumentTypes,
+      AboutSlice,
+      AboutSliceDefaultPrimary,
+      AboutSliceVariation,
+      AboutSliceDefault,
+      CollectionSectionSlice,
+      CollectionSectionSliceDefaultPrimaryItemsItem,
+      CollectionSectionSliceDefaultPrimary,
+      CollectionSectionSliceVariation,
+      CollectionSectionSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimaryButtonsItem,
       HeroSliceDefaultPrimaryStatsItem,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      LogoSectionSlice,
+      LogoSectionSliceDefaultPrimaryLogosItem,
+      LogoSectionSliceDefaultPrimary,
+      LogoSectionSliceVariation,
+      LogoSectionSliceDefault,
     };
   }
 }

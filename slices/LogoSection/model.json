@@ -1,0 +1,55 @@
+{
+  "id": "logo_section",
+  "type": "SharedSlice",
+  "name": "LogoSection",
+  "description": "LogoSection",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "logos": {
+          "type": "Group",
+          "config": {
+            "label": "logos",
+            "repeat": true,
+            "fields": {
+              "logosection": {
+                "type": "Image",
+                "config": {
+                  "label": "LogoSection",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "alt_text": {
+                "type": "Text",
+                "config": {
+                  "label": "alt_text",
+                  "placeholder": ""
+                }
+              },
+              "size": {
+                "type": "Select",
+                "config": {
+                  "label": "size",
+                  "placeholder": "",
+                  "options": [
+                    "default",
+                    "big",
+                    "small"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

@@ -83,40 +83,64 @@
 }
 
 .nav-link {
-  text-decoration: none;
-  color: white;
-  font-family: sans-serif;
-  font-size: 20px;
-  font-weight: 541;
-  line-height: 100%;
-  padding: 6px 10px;
   display: flex;
   align-items: center;
-  transition: background 0.2s;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 100%;
+  padding: 0;                
+  margin: 0;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
 }
 
 .nav-link + .nav-link {
-  margin-left: 22px;
+  margin-left: 0;
+}
+
+
+.nav-link.collections {
+  width: 117.83px;
+  height: 32px;
+}
+
+.nav-link.feature {
+  width: 77.9px;
+  height: 30.9px;
+}
+
+.nav-link.faq {
+  width: 40.5px;
+  height: 30.5px;
 }
 
 .nav-link:hover {
   color: #b100ff;
 }
-
 .wallet-btn {
-  margin-left: 22px;
+  margin: 10px 20px 10px 20px;
   height: 36px;
-  padding: 0 18px;
+  width: 171px;
   border-radius: 10px;
   border: none;
   background: linear-gradient(90deg, #8f00ff, #d600ff);
   color: white;
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 500;
   cursor: pointer;
   transition: transform 0.2s;
   display: flex;
   align-items: center;
+  justify-content: center;
   text-decoration: none;
   white-space: nowrap;
 }

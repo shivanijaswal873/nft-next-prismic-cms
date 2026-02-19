@@ -17,6 +17,15 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "collection_section": {
+              "type": "SharedSlice"
+            },
+            "about": {
+              "type": "SharedSlice"
+            },
+            "logo_section": {
+              "type": "SharedSlice"
+            },
             "hero": {
               "type": "SharedSlice"
             }

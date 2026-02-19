@@ -1,0 +1,103 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Eiusmod do consectetur qui cillum id adipisicing irure proident quis nulla officia adipisicing minim occaecat. Mollit aliquip laborum culpa et Lorem velit non est reprehenderit ea voluptate sint exercitation occaecat."
+						}
+					}
+				]
+			},
+			"subtitle": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Culpa ad do in duis irure fugiat sit ex cupidatat exercitation minim amet quis ad. Mollit aute aute enim ex consectetur duis minim aliqua nulla officia ex."
+						}
+					}
+				]
+			},
+			"show_tabs": {
+				"__TYPE__": "BooleanContent",
+				"value": true
+			},
+			"items": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"nft_image",
+								{
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1560762484-813fc97650a0",
+										"width": 3344,
+										"height": 2509
+									},
+									"url": "https://images.unsplash.com/photo-1560762484-813fc97650a0",
+									"width": 3344,
+									"height": 2509,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"alt": "these",
+									"credits": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							],
+							[
+								"nft_title",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "value",
+									"type": "Text"
+								}
+							],
+							[
+								"author",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "lay",
+									"type": "Text"
+								}
+							],
+							[
+								"bid",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "impossible",
+									"type": "Text"
+								}
+							],
+							[
+								"category",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "Pattern",
+									"type": "Select"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
