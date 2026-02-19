@@ -1,0 +1,149 @@
+.about {
+  width: 100%;
+}
+
+.about-container {
+  width: 100%;
+  max-width: 1197px;
+  margin: 0 auto;
+  color: white;
+  border-radius: 8px;
+  margin-top: 50px;
+  box-sizing: border-box;
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.about-header h2 {
+  font-size: 44px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.about-header p {
+  font-size: 16px;
+  color: #999999;
+  letter-spacing: 0.5px;
+}
+
+.about-content {
+  display: flex;
+  gap: 80px;
+  align-items: center;
+}
+
+.about-image img {
+  width: 440px;
+  height: 490px;
+  max-width: 490px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.about-text {
+  max-width: 588px;
+  width: 100%;
+}
+
+.about-text h3 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #888888;
+  margin-bottom: 32px;
+  text-align: justify;
+}
+
+.about-btn {
+  background: linear-gradient(90deg, #8f00ff, #d600ff);
+  color: white;
+  border: none;
+  padding: 10px 28px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.about-btn:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 1024px) {
+  .about-container {
+    padding: 0 32px;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    padding: 0 16px;
+    margin-top: 40px;
+  }
+
+  .about-header h2 {
+    font-size: 32px;
+  }
+
+  .about-header p {
+    max-width: 520px;
+    margin: 10px auto 0;
+    text-align: center;
+    line-height: 1.6;
+    color: #cfcfcf;
+    font-size: 16px;
+  }
+  .about-content {
+    flex-direction: column;
+    gap: 32px;
+    text-align: center;
+  }
+
+  .about-image img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+  }
+
+  .about-text {
+    max-width: 100%;
+  }
+
+  .about-text h3 {
+    font-size: 26px;
+  }
+
+  .about-text p {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .about-btn {
+    padding: 10px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-header h2 {
+    font-size: 28px;
+  }
+
+  .about-text h3 {
+    font-size: 22px;
+  }
+
+  .about-image img {
+    max-width: 280px;
+  }
+}

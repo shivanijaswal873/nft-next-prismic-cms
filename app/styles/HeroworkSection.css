@@ -1,0 +1,141 @@
+.hero {
+  width: 100%;
+  margin-top: 40px;
+}
+
+.hero-container {
+  width: 100%;
+  max-width: 1197px;
+  margin: 0 auto;
+  height: 517px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.hero-left {
+  flex: 1;
+  color: white;
+}
+
+.hero-left h1 {
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: 'Poppins', sans-serif;
+}
+
+.hero-left p {
+  margin-top: 16px;
+  color: #cfcfcf;
+  font-size: 15px;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.hero-buttons {
+  margin-top: 24px;
+  display: flex;
+  gap: 16px;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #8f00ff, #d600ff);
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 10px;
+}
+.btn-primary:hover{
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 10px;
+}
+.btn-secondary:hover{
+  transform: scale(1.05);
+}
+
+.hero-stats {
+  margin-top: 36px;
+  display: flex;
+  gap: 80px;
+}
+
+.hero-right {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.hero-right img {
+  width: 500px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 14px;
+}
+.text1 {
+  font-style: Bold;
+  font-size: 50px;
+  line-height: 120%;
+  font-weight: 700;
+}
+@media (max-width: 768px) {
+
+  .hero {
+    margin-top: 20px;
+  }
+
+  .hero-container {
+    flex-direction: column;
+    height: auto;
+    gap: 24px;
+    padding: 0 16px;
+    text-align: center;
+  }
+
+  .hero-left {
+    flex: none;
+  }
+
+  .hero-left h1 {
+    font-size: 30px;
+    line-height: 1.3;
+  }
+
+  .text1 {
+    font-size: 34px;
+    line-height: 1.2;
+  }
+
+  .hero-left p {
+    font-size: 14px;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-stats {
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .hero-right {
+    justify-content: center;
+  }
+
+  .hero-right img {
+    width: 100%;
+    max-width: 320px;
+    border-radius: 12px;
+  }
+}
