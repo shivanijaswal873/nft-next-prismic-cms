@@ -5,6 +5,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText } from "@prismicio/react";
+import { isFilled } from "@prismicio/client";
 import "../styles/AboutworkSection.css";
 
 export default function AboutComponent({ data }: any) {
@@ -16,20 +17,28 @@ export default function AboutComponent({ data }: any) {
     <section className="about">
       <div className="about-container">
         <div className="about-header">
-          <PrismicRichText field={data.title} />
-          <PrismicRichText field={data.subtitle} />
+          {isFilled.richText(data.title) && (
+            <PrismicRichText field={data.title} />
+          )}
+          {isFilled.richText(data.subtitle) && (
+            <PrismicRichText field={data.subtitle} />
+          )}
         </div>
 
         <div className="about-content">
-          <div className="about-image" data-aos="fade-right">
-            <PrismicNextImage field={data.image} alt="" />
-          </div>
+          {isFilled.image(data.image) && (
+            <div className="about-image" data-aos="fade-right">
+              <PrismicNextImage field={data.image} alt="" />
+            </div>
+          )}
 
           <div className="about-text" data-aos="fade-left">
-            <PrismicRichText field={data.heading} />
-            <p>{data.description}</p>
+            {isFilled.richText(data.heading) && (
+              <PrismicRichText field={data.heading} />
+            )}
+            {isFilled.keyText(data.description) && <p>{data.description}</p>}
 
-            {data.showButton && (
+            {data.showButton && isFilled.keyText(data.buttonText) && (
               <button className="about-btn">{data.buttonText}</button>
             )}
           </div>

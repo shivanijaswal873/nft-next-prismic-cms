@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
+import { PrismicNextLink } from "@prismicio/next";
+import { isFilled } from "@prismicio/client";
 import { FiMenu, FiX, FiSearch } from "react-icons/fi";
 import "../styles/Navbar.css";
 import Link from "next/link";
@@ -17,6 +18,7 @@ export default function ClientNavbar({ settings }: any) {
         <Link href="/" className="logo">
           Psycho<span>Art</span>
         </Link>
+
         <div className="search">
           <FiSearch className="search-icon" />
           <input
@@ -27,14 +29,16 @@ export default function ClientNavbar({ settings }: any) {
 
         <nav className={`nav-links ${menuOpen ? "open" : ""}`}>
           {settings.data.navigation?.map((item: any, i: number) => (
-            <PrismicNextLink key={i} field={item.link} className="nav-link">
-              {item.label}
-            </PrismicNextLink>
+              <PrismicNextLink key={i} field={item.link} className="nav-link">
+                {item.label}
+              </PrismicNextLink>
           ))}
 
-          <a href="#" className="wallet-btn">
-            {settings.data.wallet_text}
-          </a>
+          {isFilled.keyText(settings.data.wallet_text) && (
+            <a href="#" className="wallet-btn">
+              {settings.data.wallet_text}
+            </a>
+          )}
         </nav>
 
         <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>

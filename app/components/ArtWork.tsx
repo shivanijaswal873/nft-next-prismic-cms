@@ -2,28 +2,33 @@
 import "../styles/ImageworkSection.css";
 
 type Props = {
-  image: string;
-  title: string;
-  currentBid: string;
-  name: string;
+  image?: string;
+  title?: string;
+  currentBid?: string;
+  name?: string;
 };
 
 export default function ArtworkCard({ image, title, currentBid, name }: Props) {
+  if (!image && !title && !currentBid && !name) return null;
+
   return (
     <section className="card">
-      <img src={image} alt={title} />
+      {image && <img src={image} alt={title || "artwork"} />}
+
       <div className="card-info">
         <div className="top-row">
-          <span className="artist-name">{name}</span>
-          <small className="bid-label">Current Bid</small>
+          {name && <span className="artist-name">{name}</span>}
+          {currentBid && <small className="bid-label">Current Bid</small>}
         </div>
 
         <div className="bottom-row">
-          <h4 className="card-title">{title}</h4>
-          <span className="bid-value">{currentBid}</span>
+          {title && <h4 className="card-title">{title}</h4>}
+          {currentBid && <span className="bid-value">{currentBid}</span>}
         </div>
 
-        <button className="bid-btn">Place a bid</button>
+        {(title || currentBid) && (
+          <button className="bid-btn">Place a bid</button>
+        )}
       </div>
     </section>
   );

@@ -3,6 +3,7 @@
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import { PrismicNextImage } from "@prismicio/next";
+import { isFilled } from "@prismicio/client";
 
 export default function LogoSlider({ logos }: any) {
   const [sliderRef] = useKeenSlider({
@@ -26,18 +27,22 @@ export default function LogoSlider({ logos }: any) {
     },
   });
 
+  if (!logos?.length) return null;
+
   return (
     <section className="partners">
       <div ref={sliderRef} className="keen-slider">
-        {logos?.map((item: any, i: number) => (
-          <div key={i} className="keen-slider__slide">
-            <PrismicNextImage
-              field={item.logosection}
-              alt={item.alt_text || "logo"}
-              className={`partner-logo ${item.size || ""}`}
-            />
-          </div>
-        ))}
+        {logos.map((item: any, i: number) =>
+          isFilled.image(item.logosection) ? (
+            <div key={i} className="keen-slider__slide">
+              <PrismicNextImage
+                field={item.logosection}
+                alt={item.alt_text || "logo"}
+                className={`partner-logo ${item.size || ""}`}
+              />
+            </div>
+          ) : null,
+        )}
       </div>
     </section>
   );
