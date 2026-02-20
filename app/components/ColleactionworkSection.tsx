@@ -4,6 +4,7 @@ import { useState } from "react";
 import ArtworkCard from "./ArtWork";
 import { PrismicRichText, PrismicRichTextProps } from "@prismicio/react";
 import "../styles/ImageworkSection.css";
+import { isFilled } from "@prismicio/client";
 
 type Item = {
   image: string;
@@ -28,21 +29,32 @@ export default function CollectionSectionUI({
 }: Props) {
   const [activeTab, setActiveTab] = useState("All");
 
+  const normalize = (v: string) => v?.toLowerCase().trim();
+
   const tabs = showTabs
-    ? ["All", ...Array.from(new Set(items.map((i) => i.category)))]
+    ? ["All", ...Array.from(new Set(items.map((i) => normalize(i.category))))]
     : [];
 
-  const filteredItems =
-    activeTab === "All"
+  const filteredItems = showTabs
+    ? activeTab === "All"
       ? items
-      : items.filter((i) => i.category === activeTab);
-
+      : items.filter((i) => normalize(i.category) === normalize(activeTab))
+    : items;
   return (
     <section className="collection">
       <div className="collection-container">
         <div className="collection-header">
-          <h2><PrismicRichText field={title} /></h2>
-          <p><PrismicRichText field={subtitle} /></p>
+          {isFilled.richText(title) && (
+            <h2>
+              {" "}
+              <PrismicRichText field={title} />
+            </h2>
+          )}
+          {isFilled.richText(subtitle) && (
+            <p>
+              <PrismicRichText field={subtitle} />
+            </p>
+          )}
         </div>
 
         {showTabs && (
@@ -53,7 +65,7 @@ export default function CollectionSectionUI({
                 className={`colleaction-button ${activeTab === tab ? "active" : ""}`}
                 onClick={() => setActiveTab(tab)}
               >
-                {tab}
+                {tab.charAt(0).toUpperCase() + tab.slice(1)}
               </button>
             ))}
           </div>

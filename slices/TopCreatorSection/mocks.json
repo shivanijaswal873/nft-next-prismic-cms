@@ -1,0 +1,31 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Culpa consequat deserunt minim esse culpa consectetur aliquip ea nulla. Nostrud excepteur duis sint deserunt aute voluptate ut consectetur sit veniam ea nisi duis. Reprehenderit adipisicing aliqua duis nulla dolore consectetur exercitation veniam nisi minim adipisicing."
+						}
+					}
+				]
+			},
+			"subtitle": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Irure minim nisi in magna ea officia mollit do mollit ut. Eiusmod consectetur et tempor ullamco do deserunt proident."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

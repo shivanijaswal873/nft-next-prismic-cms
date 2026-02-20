@@ -40,13 +40,13 @@
 								{
 									"origin": {
 										"id": "main",
-										"url": "https://images.unsplash.com/photo-1560762484-813fc97650a0",
-										"width": 3344,
-										"height": 2509
+										"url": "https://images.unsplash.com/photo-1579931794097-0ad001e51edb",
+										"width": 3958,
+										"height": 3958
 									},
-									"url": "https://images.unsplash.com/photo-1560762484-813fc97650a0",
-									"width": 3344,
-									"height": 2509,
+									"url": "https://images.unsplash.com/photo-1579931794097-0ad001e51edb",
+									"width": 3958,
+									"height": 3958,
 									"edit": {
 										"zoom": 1,
 										"crop": {
@@ -55,7 +55,7 @@
 										},
 										"background": "transparent"
 									},
-									"alt": "these",
+									"alt": "has",
 									"credits": null,
 									"__TYPE__": "ImageContent",
 									"thumbnails": {}
@@ -65,7 +65,7 @@
 								"nft_title",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "value",
+									"value": "your",
 									"type": "Text"
 								}
 							],
@@ -73,7 +73,7 @@
 								"author",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "lay",
+									"value": "these",
 									"type": "Text"
 								}
 							],
@@ -81,15 +81,15 @@
 								"bid",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "impossible",
+									"value": "try",
 									"type": "Text"
 								}
 							],
 							[
-								"category",
+								"button_text",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "Pattern",
+									"value": "Sport",
 									"type": "Select"
 								}
 							]
@@ -99,5 +99,116 @@
 			}
 		},
 		"items": []
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "featured",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Deserunt duis duis nisi proident."
+						}
+					}
+				]
+			},
+			"subtitle": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Excepteur ea aliqua nulla non adipisicing. Aute eu sit irure."
+						}
+					}
+				]
+			},
+			"show_tabs": {
+				"__TYPE__": "BooleanContent",
+				"value": false
+			},
+			"items": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"nft_image",
+								{
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2",
+										"width": 5616,
+										"height": 3744
+									},
+									"url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2",
+									"width": 5616,
+									"height": 3744,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"alt": "horn",
+									"credits": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							],
+							[
+								"nft_title",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "slow",
+									"type": "Text"
+								}
+							],
+							[
+								"author",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "drive",
+									"type": "Text"
+								}
+							],
+							[
+								"bid",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "attack",
+									"type": "Text"
+								}
+							],
+							[
+								"button_text",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "Photograpy",
+									"type": "Select"
+								}
+							]
+						]
+					}
+				]
+			},
+			"category": {
+				"__TYPE__": "FieldContent",
+				"value": "featured",
+				"type": "Select"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
 	}
 ]

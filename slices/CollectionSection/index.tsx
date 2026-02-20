@@ -5,14 +5,15 @@ import CollectionSectionUI from "@/app/components/ColleactionworkSection";
 export type CollectionSectionProps =
   SliceComponentProps<Content.CollectionSectionSlice>;
 
-const CollectionSection = ({ slice }: CollectionSectionProps) => {
-  const items = slice.primary.items.map((item) => ({
-    image: item.nft_image?.url ?? "",
-    title: item.nft_title ?? "",
-    name: item.author ?? "",
-    currentBid: item.bid ?? "",
-    category: item.category ?? "All",
-  }));
+export default function CollectionSection({ slice }: CollectionSectionProps) {
+  const items =
+    slice.primary.items?.map((item) => ({
+      image: item.nft_image?.url ?? "",
+      title: item.nft_title ?? "",
+      name: item.author ?? "",
+      currentBid: item.bid ?? "",
+      category: item.button_text ?? "All",
+    })) ?? [];
 
   return (
     <CollectionSectionUI
@@ -22,6 +23,4 @@ const CollectionSection = ({ slice }: CollectionSectionProps) => {
       showTabs={slice.primary.show_tabs ?? false}
     />
   );
-};
-
-export default CollectionSection;
+}

@@ -7,4 +7,5 @@ export const components = {
   collection_section: dynamic(() => import("./CollectionSection")),
   hero: dynamic(() => import("./Hero")),
   logo_section: dynamic(() => import("./LogoSection")),
+  top_creator_section: dynamic(() => import("./TopCreatorSection")),
 };

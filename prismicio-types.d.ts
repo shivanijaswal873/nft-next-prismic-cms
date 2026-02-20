@@ -139,6 +139,82 @@ export type DashboardDocument<Lang extends string = string> =
   >;
 
 /**
+ * Content for NFT Item documents
+ */
+interface NftItemDocumentData {
+  /**
+   * nft_image field in *NFT Item*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nft_item.nft_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  nft_image: prismic.ImageField<never>;
+
+  /**
+   * nft_title field in *NFT Item*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nft_item.nft_title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  nft_title: prismic.KeyTextField;
+
+  /**
+   * author field in *NFT Item*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nft_item.author
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  author: prismic.KeyTextField;
+
+  /**
+   * bid field in *NFT Item*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nft_item.bid
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  bid: prismic.KeyTextField;
+
+  /**
+   * category field in *NFT Item*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nft_item.category
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  category: prismic.SelectField<"1" | "2">;
+}
+
+/**
+ * NFT Item document from Prismic
+ *
+ * - **API ID**: `nft_item`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type NftItemDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<NftItemDocumentData>,
+    "nft_item",
+    Lang
+  >;
+
+/**
  * Item in *Settings → Navigation*
  */
 export interface SettingsDocumentDataNavigationItem {
@@ -228,7 +304,10 @@ export type SettingsDocument<Lang extends string = string> =
     Lang
   >;
 
-export type AllDocumentTypes = DashboardDocument | SettingsDocument;
+export type AllDocumentTypes =
+  | DashboardDocument
+  | NftItemDocument
+  | SettingsDocument;
 
 /**
  * Primary content in *AboutSection → Default → Primary*
@@ -378,14 +457,69 @@ export interface CollectionSectionSliceDefaultPrimaryItemsItem {
   bid: prismic.KeyTextField;
 
   /**
-   * category field in *CollectionSection → Default → Primary → items*
+   * Button Text field in *CollectionSection → Default → Primary → items*
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
-   * - **API ID Path**: collection_section.default.primary.items[].category
+   * - **API ID Path**: collection_section.default.primary.items[].button_text
    * - **Documentation**: https://prismic.io/docs/fields/select
    */
-  category: prismic.SelectField<"Sport" | "Photograpy" | "Pattern">;
+  button_text: prismic.SelectField<"Sport" | "Photograpy" | "Pattern">;
+}
+
+/**
+ * Item in *CollectionSection → featured  → Primary → items*
+ */
+export interface CollectionSectionSliceFeaturedPrimaryItemsItem {
+  /**
+   * nft_image field in *CollectionSection → featured  → Primary → items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: collection_section.featured.primary.items[].nft_image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  nft_image: prismic.ImageField<never>;
+
+  /**
+   * nft_title field in *CollectionSection → featured  → Primary → items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: collection_section.featured.primary.items[].nft_title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  nft_title: prismic.KeyTextField;
+
+  /**
+   * author field in *CollectionSection → featured  → Primary → items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: collection_section.featured.primary.items[].author
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  author: prismic.KeyTextField;
+
+  /**
+   * bid field in *CollectionSection → featured  → Primary → items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: collection_section.featured.primary.items[].bid
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  bid: prismic.KeyTextField;
+
+  /**
+   * Button Text field in *CollectionSection → featured  → Primary → items*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: collection_section.featured.primary.items[].button_text
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  button_text: prismic.SelectField<"Sport" | "Photograpy" | "Pattern">;
 }
 
 /**
@@ -450,9 +584,82 @@ export type CollectionSectionSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *CollectionSection → featured  → Primary*
+ */
+export interface CollectionSectionSliceFeaturedPrimary {
+  /**
+   * title field in *CollectionSection → featured  → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: collection_section.featured.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * subtitle field in *CollectionSection → featured  → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: collection_section.featured.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  subtitle: prismic.RichTextField;
+
+  /**
+   * show_tabs field in *CollectionSection → featured  → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: collection_section.featured.primary.show_tabs
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  show_tabs: prismic.BooleanField;
+
+  /**
+   * items field in *CollectionSection → featured  → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: collection_section.featured.primary.items[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  items: prismic.GroupField<
+    Simplify<CollectionSectionSliceFeaturedPrimaryItemsItem>
+  >;
+
+  /**
+   * category field in *CollectionSection → featured  → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: collection_section.featured.primary.category
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  category: prismic.SelectField<"featured" | "featured">;
+}
+
+/**
+ * featured  variation for CollectionSection Slice
+ *
+ * - **API ID**: `featured`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type CollectionSectionSliceFeatured = prismic.SharedSliceVariation<
+  "featured",
+  Simplify<CollectionSectionSliceFeaturedPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *CollectionSection*
  */
-type CollectionSectionSliceVariation = CollectionSectionSliceDefault;
+type CollectionSectionSliceVariation =
+  | CollectionSectionSliceDefault
+  | CollectionSectionSliceFeatured;
 
 /**
  * CollectionSection Shared Slice
@@ -694,6 +901,61 @@ export type LogoSectionSlice = prismic.SharedSlice<
   LogoSectionSliceVariation
 >;
 
+/**
+ * Primary content in *TopCreatorSection → Default → Primary*
+ */
+export interface TopCreatorSectionSliceDefaultPrimary {
+  /**
+   * title field in *TopCreatorSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: top_creator_section.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * subtitle field in *TopCreatorSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: top_creator_section.default.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  subtitle: prismic.RichTextField;
+}
+
+/**
+ * Default variation for TopCreatorSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type TopCreatorSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TopCreatorSectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *TopCreatorSection*
+ */
+type TopCreatorSectionSliceVariation = TopCreatorSectionSliceDefault;
+
+/**
+ * TopCreatorSection Shared Slice
+ *
+ * - **API ID**: `top_creator_section`
+ * - **Description**: TopCreatorSection
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type TopCreatorSectionSlice = prismic.SharedSlice<
+  "top_creator_section",
+  TopCreatorSectionSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -718,6 +980,8 @@ declare module "@prismicio/client" {
       DashboardDocument,
       DashboardDocumentData,
       DashboardDocumentDataSlicesSlice,
+      NftItemDocument,
+      NftItemDocumentData,
       SettingsDocument,
       SettingsDocumentData,
       SettingsDocumentDataNavigationItem,
@@ -729,8 +993,11 @@ declare module "@prismicio/client" {
       CollectionSectionSlice,
       CollectionSectionSliceDefaultPrimaryItemsItem,
       CollectionSectionSliceDefaultPrimary,
+      CollectionSectionSliceFeaturedPrimaryItemsItem,
+      CollectionSectionSliceFeaturedPrimary,
       CollectionSectionSliceVariation,
       CollectionSectionSliceDefault,
+      CollectionSectionSliceFeatured,
       HeroSlice,
       HeroSliceDefaultPrimaryButtonsItem,
       HeroSliceDefaultPrimaryStatsItem,
@@ -742,6 +1009,10 @@ declare module "@prismicio/client" {
       LogoSectionSliceDefaultPrimary,
       LogoSectionSliceVariation,
       LogoSectionSliceDefault,
+      TopCreatorSectionSlice,
+      TopCreatorSectionSliceDefaultPrimary,
+      TopCreatorSectionSliceVariation,
+      TopCreatorSectionSliceDefault,
     };
   }
 }
