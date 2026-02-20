@@ -15,9 +15,7 @@ export default function NFTworkSection({ title, button_text }: Props) {
     <section className="NFT-section">
       <div className="NFT-box">
         {isFilled.richText(title) && (
-          <h2>
             <PrismicRichText field={title} />
-          </h2>
         )}
 
         {isFilled.keyText(button_text) && (

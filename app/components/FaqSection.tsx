@@ -33,17 +33,9 @@ export default function FAQSection({ title, subtitle, faqs }: Props) {
   return (
     <section className="faq-bg" id="faq">
       <div className="faq-box">
-        {isFilled.richText(title) && (
-          <h2>
-            <PrismicRichText field={title} />
-          </h2>
-        )}
+        {isFilled.richText(title) && <PrismicRichText field={title} />}
 
-        {isFilled.richText(subtitle) && (
-          <p>
-            <PrismicRichText field={subtitle} />
-          </p>
-        )}
+        {isFilled.richText(subtitle) && <PrismicRichText field={subtitle} />}
 
         <div className="faq-grid">
           {validFaqs.map((faq, index) => (
