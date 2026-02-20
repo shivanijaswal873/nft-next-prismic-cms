@@ -28,7 +28,6 @@ export default function CollectionSectionUI({
   showTabs,
 }: Props) {
   const [activeTab, setActiveTab] = useState("All");
-
   const normalize = (v: string) => v?.toLowerCase().trim();
 
   const tabs = showTabs
@@ -44,17 +43,8 @@ export default function CollectionSectionUI({
     <section className="collection" id="collection">
       <div className="collection-container">
         <div className="collection-header">
-          {isFilled.richText(title) && (
-            <h2>
-              {" "}
-              <PrismicRichText field={title} />
-            </h2>
-          )}
-          {isFilled.richText(subtitle) && (
-            <p>
-              <PrismicRichText field={subtitle} />
-            </p>
-          )}
+          {isFilled.richText(title) && <PrismicRichText field={title} />}
+          {isFilled.richText(subtitle) && <PrismicRichText field={subtitle} />}
         </div>
 
         {showTabs && (

@@ -38,7 +38,9 @@ export default function CreatorworkSection({
                   className={`top-card ${item.followed ? "active" : ""}`}
                   key={i}
                 >
-                  {item.background && <img src={item.background} className="bg" />}
+                  {item.background && (
+                    <img src={item.background} className="bg" />
+                  )}
                   {item.image && <img src={item.image} className="user" />}
 
                   {item.name && <h3>{item.name}</h3>}
@@ -50,7 +52,7 @@ export default function CreatorworkSection({
                     </button>
                   )}
                 </div>
-              )
+              ),
           )}
         </div>
       </div>

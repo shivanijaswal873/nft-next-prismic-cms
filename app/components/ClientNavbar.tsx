@@ -29,9 +29,9 @@ export default function ClientNavbar({ settings }: any) {
 
         <nav className={`nav-links ${menuOpen ? "open" : ""}`}>
           {settings.data.navigation?.map((item: any, i: number) => (
-              <PrismicNextLink key={i} field={item.link} className="nav-link">
-                {item.label}
-              </PrismicNextLink>
+            <PrismicNextLink key={i} field={item.link} className="nav-link">
+              {item.label}
+            </PrismicNextLink>
           ))}
 
           {isFilled.keyText(settings.data.wallet_text) && (

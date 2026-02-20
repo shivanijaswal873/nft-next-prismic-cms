@@ -5,18 +5,15 @@ import { PrismicNextImage } from "@prismicio/next";
 import { isFilled } from "@prismicio/client";
 import "../styles/ImageworkSection.css";
 
-export default function FeaturedClient({ title, items = [] }: any) {
+export default function FeaturedClient({ title,  subtitle, items = [] }: any) {
   if (!isFilled.richText(title) && !items?.length) return null;
 
   return (
     <section className="collection" id="feature">
       <div className="collection-container">
         <div className="collection-header">
-          {isFilled.richText(title) && (
-            <h2>
-              <PrismicRichText field={title} />
-            </h2>
-          )}
+          {isFilled.richText(title) && <PrismicRichText field={title} />}
+          {isFilled.richText(subtitle) && <PrismicRichText field={subtitle} />}
         </div>
 
         <div className="collection-grid">
@@ -45,10 +42,8 @@ export default function FeaturedClient({ title, items = [] }: any) {
                     </div>
 
                     <div className="bottom-row">
-                      {isFilled.richText(item.nft_title) && (
-                        <h4 className="card-title">
-                          <PrismicRichText field={item.nft_title} />
-                        </h4>
+                      {isFilled.keyText(item.nft_title) && (
+                        <h4 className="card-title">{item.nft_title}</h4>
                       )}
 
                       {isFilled.keyText(item.bid) && (
