@@ -70,6 +70,7 @@ type ContentRelationshipFieldWithData<
 }[Exclude<TCustomType[number], string>["id"]];
 
 type DashboardDocumentDataSlicesSlice =
+  | TopCreatorSectionSlice
   | CollectionSectionSlice
   | AboutSlice
   | LogoSectionSlice
@@ -135,82 +136,6 @@ export type DashboardDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<
     Simplify<DashboardDocumentData>,
     "dashboard",
-    Lang
-  >;
-
-/**
- * Content for NFT Item documents
- */
-interface NftItemDocumentData {
-  /**
-   * nft_image field in *NFT Item*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: nft_item.nft_image
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/fields/image
-   */
-  nft_image: prismic.ImageField<never>;
-
-  /**
-   * nft_title field in *NFT Item*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: nft_item.nft_title
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/fields/text
-   */
-  nft_title: prismic.KeyTextField;
-
-  /**
-   * author field in *NFT Item*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: nft_item.author
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/fields/text
-   */
-  author: prismic.KeyTextField;
-
-  /**
-   * bid field in *NFT Item*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: nft_item.bid
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/fields/text
-   */
-  bid: prismic.KeyTextField;
-
-  /**
-   * category field in *NFT Item*
-   *
-   * - **Field Type**: Select
-   * - **Placeholder**: *None*
-   * - **API ID Path**: nft_item.category
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/fields/select
-   */
-  category: prismic.SelectField<"1" | "2">;
-}
-
-/**
- * NFT Item document from Prismic
- *
- * - **API ID**: `nft_item`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/content-modeling
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type NftItemDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithUID<
-    Simplify<NftItemDocumentData>,
-    "nft_item",
     Lang
   >;
 
@@ -304,10 +229,7 @@ export type SettingsDocument<Lang extends string = string> =
     Lang
   >;
 
-export type AllDocumentTypes =
-  | DashboardDocument
-  | NftItemDocument
-  | SettingsDocument;
+export type AllDocumentTypes = DashboardDocument | SettingsDocument;
 
 /**
  * Primary content in *AboutSection → Default → Primary*
@@ -902,6 +824,62 @@ export type LogoSectionSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *TopCreatorSection → Default → Primary → creators*
+ */
+export interface TopCreatorSectionSliceDefaultPrimaryCreatorsItem {
+  /**
+   * Image field in *TopCreatorSection → Default → Primary → creators*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: top_creator_section.default.primary.creators[].image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * background image field in *TopCreatorSection → Default → Primary → creators*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: top_creator_section.default.primary.creators[].background_image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  background_image: prismic.ImageField<never>;
+
+  /**
+   * author field in *TopCreatorSection → Default → Primary → creators*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: top_creator_section.default.primary.creators[].author
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  author: prismic.KeyTextField;
+
+  /**
+   * text field in *TopCreatorSection → Default → Primary → creators*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: top_creator_section.default.primary.creators[].text
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  text: prismic.KeyTextField;
+
+  /**
+   * followed field in *TopCreatorSection → Default → Primary → creators*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: top_creator_section.default.primary.creators[].followed
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  followed: prismic.BooleanField;
+}
+
+/**
  * Primary content in *TopCreatorSection → Default → Primary*
  */
 export interface TopCreatorSectionSliceDefaultPrimary {
@@ -924,6 +902,18 @@ export interface TopCreatorSectionSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
   subtitle: prismic.RichTextField;
+
+  /**
+   * creators field in *TopCreatorSection → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: top_creator_section.default.primary.creators[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  creators: prismic.GroupField<
+    Simplify<TopCreatorSectionSliceDefaultPrimaryCreatorsItem>
+  >;
 }
 
 /**
@@ -980,8 +970,6 @@ declare module "@prismicio/client" {
       DashboardDocument,
       DashboardDocumentData,
       DashboardDocumentDataSlicesSlice,
-      NftItemDocument,
-      NftItemDocumentData,
       SettingsDocument,
       SettingsDocumentData,
       SettingsDocumentDataNavigationItem,
@@ -1010,6 +998,7 @@ declare module "@prismicio/client" {
       LogoSectionSliceVariation,
       LogoSectionSliceDefault,
       TopCreatorSectionSlice,
+      TopCreatorSectionSliceDefaultPrimaryCreatorsItem,
       TopCreatorSectionSliceDefaultPrimary,
       TopCreatorSectionSliceVariation,
       TopCreatorSectionSliceDefault,

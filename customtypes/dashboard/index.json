@@ -17,6 +17,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "top_creator_section": {
+              "type": "SharedSlice"
+            },
             "collection_section": {
               "type": "SharedSlice"
             },

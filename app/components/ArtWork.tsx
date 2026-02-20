@@ -1,4 +1,5 @@
 "use client";
+import "../styles/ImageworkSection.css";
 
 type Props = {
   image: string;
