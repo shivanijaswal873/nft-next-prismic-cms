@@ -41,7 +41,7 @@ export default function CollectionSectionUI({
       : items.filter((i) => normalize(i.category) === normalize(activeTab))
     : items;
   return (
-    <section className="collection">
+    <section className="collection" id="collection">
       <div className="collection-container">
         <div className="collection-header">
           {isFilled.richText(title) && (

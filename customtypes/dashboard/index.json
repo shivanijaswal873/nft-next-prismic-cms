@@ -17,6 +17,15 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "footer_section": {
+              "type": "SharedSlice"
+            },
+            "nft_section": {
+              "type": "SharedSlice"
+            },
+            "faq_section": {
+              "type": "SharedSlice"
+            },
             "top_creator_section": {
               "type": "SharedSlice"
             },

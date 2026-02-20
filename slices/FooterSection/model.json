@@ -1,0 +1,97 @@
+{
+  "id": "footer_section",
+  "type": "SharedSlice",
+  "name": "FooterSection",
+  "description": "FooterSection",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "logo_text": {
+          "type": "Text",
+          "config": {
+            "label": "logo_text",
+            "placeholder": ""
+          }
+        },
+        "logo_highlight": {
+          "type": "Text",
+          "config": {
+            "label": "logo_highlight",
+            "placeholder": ""
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "phone": {
+          "type": "Text",
+          "config": {
+            "label": "phone",
+            "placeholder": ""
+          }
+        },
+        "email": {
+          "type": "Text",
+          "config": {
+            "label": "email",
+            "placeholder": ""
+          }
+        },
+        "copyright": {
+          "type": "Text",
+          "config": {
+            "label": "copyright",
+            "placeholder": ""
+          }
+        },
+        "sections": {
+          "type": "Group",
+          "config": {
+            "label": "Sections",
+            "fields": {
+              "section_title": {
+                "type": "Text",
+                "config": {
+                  "label": "Section Title"
+                }
+              },
+              "links": {
+                "type": "Group",
+                "config": {
+                  "label": "Links",
+                  "fields": {
+                    "link_label": {
+                      "type": "Text",
+                      "config": {
+                        "label": "Link Label"
+                      }
+                    },
+                    "link_url": {
+                      "type": "Link",
+                      "config": {
+                        "label": "Link URL"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

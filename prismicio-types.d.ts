@@ -70,6 +70,9 @@ type ContentRelationshipFieldWithData<
 }[Exclude<TCustomType[number], string>["id"]];
 
 type DashboardDocumentDataSlicesSlice =
+  | FooterSectionSlice
+  | NftSectionSlice
+  | FaqSectionSlice
   | TopCreatorSectionSlice
   | CollectionSectionSlice
   | AboutSlice
@@ -596,6 +599,261 @@ export type CollectionSectionSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *FaqSection → Default → Primary → faqs*
+ */
+export interface FaqSectionSliceDefaultPrimaryFaqsItem {
+  /**
+   * question field in *FaqSection → Default → Primary → faqs*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_section.default.primary.faqs[].question
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  question: prismic.KeyTextField;
+
+  /**
+   * answer field in *FaqSection → Default → Primary → faqs*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_section.default.primary.faqs[].answer
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  answer: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *FaqSection → Default → Primary*
+ */
+export interface FaqSectionSliceDefaultPrimary {
+  /**
+   * title field in *FaqSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_section.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * subtitle field in *FaqSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_section.default.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  subtitle: prismic.RichTextField;
+
+  /**
+   * faqs field in *FaqSection → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_section.default.primary.faqs[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  faqs: prismic.GroupField<Simplify<FaqSectionSliceDefaultPrimaryFaqsItem>>;
+}
+
+/**
+ * Default variation for FaqSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type FaqSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FaqSectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *FaqSection*
+ */
+type FaqSectionSliceVariation = FaqSectionSliceDefault;
+
+/**
+ * FaqSection Shared Slice
+ *
+ * - **API ID**: `faq_section`
+ * - **Description**: FaqSection
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type FaqSectionSlice = prismic.SharedSlice<
+  "faq_section",
+  FaqSectionSliceVariation
+>;
+
+/**
+ * Item in *FooterSection → Default → Primary → Sections → Links*
+ */
+export interface FooterSectionSliceDefaultPrimarySectionsLinksItem {
+  /**
+   * Link Label field in *FooterSection → Default → Primary → Sections → Links*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer_section.default.primary.sections[].links[].link_label
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  link_label: prismic.KeyTextField;
+
+  /**
+   * Link URL field in *FooterSection → Default → Primary → Sections → Links*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer_section.default.primary.sections[].links[].link_url
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  link_url: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+}
+
+/**
+ * Item in *FooterSection → Default → Primary → Sections*
+ */
+export interface FooterSectionSliceDefaultPrimarySectionsItem {
+  /**
+   * Section Title field in *FooterSection → Default → Primary → Sections*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer_section.default.primary.sections[].section_title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  section_title: prismic.KeyTextField;
+
+  /**
+   * Links field in *FooterSection → Default → Primary → Sections*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer_section.default.primary.sections[].links[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  links: prismic.NestedGroupField<
+    Simplify<FooterSectionSliceDefaultPrimarySectionsLinksItem>
+  >;
+}
+
+/**
+ * Primary content in *FooterSection → Default → Primary*
+ */
+export interface FooterSectionSliceDefaultPrimary {
+  /**
+   * logo_text field in *FooterSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer_section.default.primary.logo_text
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  logo_text: prismic.KeyTextField;
+
+  /**
+   * logo_highlight field in *FooterSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer_section.default.primary.logo_highlight
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  logo_highlight: prismic.KeyTextField;
+
+  /**
+   * description field in *FooterSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer_section.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * phone field in *FooterSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer_section.default.primary.phone
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  phone: prismic.KeyTextField;
+
+  /**
+   * email field in *FooterSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer_section.default.primary.email
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  email: prismic.KeyTextField;
+
+  /**
+   * copyright field in *FooterSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer_section.default.primary.copyright
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  copyright: prismic.KeyTextField;
+
+  /**
+   * Sections field in *FooterSection → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer_section.default.primary.sections[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  sections: prismic.GroupField<
+    Simplify<FooterSectionSliceDefaultPrimarySectionsItem>
+  >;
+}
+
+/**
+ * Default variation for FooterSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type FooterSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FooterSectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *FooterSection*
+ */
+type FooterSectionSliceVariation = FooterSectionSliceDefault;
+
+/**
+ * FooterSection Shared Slice
+ *
+ * - **API ID**: `footer_section`
+ * - **Description**: FooterSection
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type FooterSectionSlice = prismic.SharedSlice<
+  "footer_section",
+  FooterSectionSliceVariation
+>;
+
+/**
  * Item in *Hero → Default → Primary → Buttons*
  */
 export interface HeroSliceDefaultPrimaryButtonsItem {
@@ -824,6 +1082,61 @@ export type LogoSectionSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *NftSection → Default → Primary*
+ */
+export interface NftSectionSliceDefaultPrimary {
+  /**
+   * title field in *NftSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nft_section.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * button_text field in *NftSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nft_section.default.primary.button_text
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  button_text: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for NftSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type NftSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<NftSectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *NftSection*
+ */
+type NftSectionSliceVariation = NftSectionSliceDefault;
+
+/**
+ * NftSection Shared Slice
+ *
+ * - **API ID**: `nft_section`
+ * - **Description**: NftSection
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type NftSectionSlice = prismic.SharedSlice<
+  "nft_section",
+  NftSectionSliceVariation
+>;
+
+/**
  * Item in *TopCreatorSection → Default → Primary → creators*
  */
 export interface TopCreatorSectionSliceDefaultPrimaryCreatorsItem {
@@ -986,6 +1299,17 @@ declare module "@prismicio/client" {
       CollectionSectionSliceVariation,
       CollectionSectionSliceDefault,
       CollectionSectionSliceFeatured,
+      FaqSectionSlice,
+      FaqSectionSliceDefaultPrimaryFaqsItem,
+      FaqSectionSliceDefaultPrimary,
+      FaqSectionSliceVariation,
+      FaqSectionSliceDefault,
+      FooterSectionSlice,
+      FooterSectionSliceDefaultPrimarySectionsLinksItem,
+      FooterSectionSliceDefaultPrimarySectionsItem,
+      FooterSectionSliceDefaultPrimary,
+      FooterSectionSliceVariation,
+      FooterSectionSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimaryButtonsItem,
       HeroSliceDefaultPrimaryStatsItem,
@@ -997,6 +1321,10 @@ declare module "@prismicio/client" {
       LogoSectionSliceDefaultPrimary,
       LogoSectionSliceVariation,
       LogoSectionSliceDefault,
+      NftSectionSlice,
+      NftSectionSliceDefaultPrimary,
+      NftSectionSliceVariation,
+      NftSectionSliceDefault,
       TopCreatorSectionSlice,
       TopCreatorSectionSliceDefaultPrimaryCreatorsItem,
       TopCreatorSectionSliceDefaultPrimary,

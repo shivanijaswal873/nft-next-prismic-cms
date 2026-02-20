@@ -1,0 +1,83 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"logo_text": {
+				"__TYPE__": "FieldContent",
+				"value": "fair",
+				"type": "Text"
+			},
+			"logo_highlight": {
+				"__TYPE__": "FieldContent",
+				"value": "funny",
+				"type": "Text"
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Eu ad adipisicing cupidatat aliqua non proident Lorem eiusmod cillum. Ut ipsum Lorem quis dolore adipisicing veniam amet sunt elit labore deserunt."
+						}
+					}
+				]
+			},
+			"phone": {
+				"__TYPE__": "FieldContent",
+				"value": "whole",
+				"type": "Text"
+			},
+			"email": {
+				"__TYPE__": "FieldContent",
+				"value": "therefore",
+				"type": "Text"
+			},
+			"copyright": {
+				"__TYPE__": "FieldContent",
+				"value": "higher",
+				"type": "Text"
+			},
+			"sections": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"section_title",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "no",
+									"type": "Text"
+								}
+							],
+							[
+								"link_label",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "minute",
+									"type": "Text"
+								}
+							],
+							[
+								"link_url",
+								{
+									"key": "659405b6-c7b3-463f-8d47-e97b91bbb63d",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://prismic.io",
+										"text": "open"
+									}
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
