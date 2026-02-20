@@ -1,0 +1,98 @@
+
+.NFT-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 80px 0;
+}
+
+.NFT-box {
+  width: 100%;
+  max-width: 1197px;
+  height: 320px;
+  min-height: 320px;
+  background: linear-gradient(180deg, #b100ff, #7a00ff);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.NFT-box h2 {
+  font-size: 40px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.3;
+  margin-bottom: 24px;
+}
+
+.NFT-btn {
+  padding: 12px 28px;
+  border-radius: 10px;
+  border: none;
+  background: #d89bff;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.NFT-btn:hover {
+   transform: scale(1.05);
+}
+
+
+@media (max-width: 768px) {
+  .NFT-section {
+    padding: 40px 12px;
+  }
+
+  .NFT-box {
+    border-radius: 14px;
+    padding: 40px 20px;
+  }
+
+  .NFT-box h2 {
+    font-size: 26px;
+    line-height: 1.4;
+  }
+
+  .NFT-btn {
+    width: 100%;
+    max-width: 260px;
+    padding: 12px 0;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .NFT-box {
+    padding: 30px 16px;
+  }
+
+  .NFT-box h2 {
+    font-size: 22px;
+  }
+
+  .NFT-btn {
+    font-size: 13px;
+  }
+}
+@media (max-width: 1024px) {
+  .NFT-section {
+    padding: 60px 20px;
+  }
+
+  .NFT-box {
+    height: 280px;
+    min-height: 280px;
+    padding: 40px 30px;
+    border-radius: 14px;
+  }
+
+  .NFT-btn {
+    padding: 12px 24px;
+    font-size: 15px;
+  }
+}

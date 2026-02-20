@@ -1,0 +1,162 @@
+.creator-section {
+  padding: 80px 0;
+  color: #fff;
+}
+.creator-container {
+  width: 100%;
+  padding: 0 24px;
+  max-width: 1197px;
+  margin: auto;
+}
+
+.creator-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.creator-header h2 {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.creator-header p {
+  color: #bdbdbd;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.top-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.top-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding-bottom: 25px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+.text {
+  color: grey;
+  font-size: 10px;
+  margin-top: 10px;
+}
+.top-card:hover {
+  transform: translateY(-8px);
+  background: rgb(173, 165, 165);
+  border: 1px solid rgba(143, 0, 255, 0.35);
+}
+
+.top-card:hover .btn {
+  background: rgb(173, 165, 165);
+  border: 1px solid rgba(143, 0, 255, 0.35);
+}
+
+.top-card .bg {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 16px 16px 0 0;
+}
+
+.top-card .user {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #1a1333;
+  position: absolute;
+  top: 230px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #000;
+}
+
+.top-card h3 {
+  margin-top: 30px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.btn {
+  width: 80%;
+  margin-top: 15px;
+  padding: 12px 0;
+  border-radius: 8px;
+  border: 2px solid #8f00ff;
+  background: linear-gradient(90deg, #8f00ff, #d600ff);
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .creator-header h2 {
+    font-size: 28px;
+  }
+
+  .creator-header p {
+    font-size: 14px;
+  }
+
+  .top-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .top-card {
+    padding-bottom: 20px;
+  }
+
+  .top-card .bg {
+    height: 220px;
+  }
+
+  .top-card .user {
+    width: 64px;
+    height: 64px;
+    top: 180px;
+  }
+
+  .top-card h3 {
+    font-size: 16px;
+    margin-top: 26px;
+  }
+
+  .btn {
+    width: 90%;
+    font-size: 14px;
+    padding: 10px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .creator-header h2 {
+    font-size: 24px;
+  }
+
+  .creator-header p {
+    font-size: 13px;
+  }
+
+  .top-card .bg {
+    height: 200px;
+  }
+
+  .top-card .user {
+    width: 58px;
+    height: 58px;
+    top: 165px;
+  }
+
+  .text {
+    font-size: 9px;
+  }
+}

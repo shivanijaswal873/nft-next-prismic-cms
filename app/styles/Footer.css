@@ -1,0 +1,175 @@
+.footer {
+  padding: 80px 0 30px;  
+  color: #ccc;
+  width: 100%;
+}
+.footer-grid {
+  max-width: 1197px; 
+  margin: 0 auto;      
+  padding: 0 24px; 
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 50px;
+  align-items: start;
+}
+
+.footer-brand h3 {
+  font-size: 26px;
+  color: #fff;
+}
+
+.logo span{
+  color:#d946ef;
+}
+
+.description{
+  width:288px;
+  height:69px;
+  margin-top:20px;
+  color:#FFFFFF80;
+  line-height:1.6;
+}
+
+.footer-col.abouts{
+  width:133px;
+  height:202px;
+}
+
+.footer-col.company{
+  width:119px;
+  height:202px;
+}
+
+.footer-col h4{
+  color:#fff;
+  margin-bottom:20px;
+  font-size:18px;
+}
+
+.footer-col ul{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+.footer-col li{
+  margin-bottom:14px;
+}
+
+.footer-col a{
+  color:#aaa;
+  text-decoration:none;
+  font-size:15px;
+}
+
+.footer-col a:hover{
+  color:#fff;
+}
+
+.contact p{
+  margin-bottom:12px;
+  color:#ccc;
+}
+
+.socials{
+  display:flex;
+  gap:16px;
+  margin-top:18px;
+}
+
+.social-icon{
+  width:36px;
+  height:36px;
+  background:rgba(255,255,255,0.15);
+  border-radius:6px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+}
+
+.social-icon:hover{
+  background:#d946ef;
+}
+
+.footer-bottom{
+  height:30px;
+  margin-top:100px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#aaa;
+  font-size:15px;
+}
+
+
+
+@media(max-width:1200px){
+
+  .footer-grid{
+    grid-template-columns: 288px 133px 119px;
+    justify-content:center;
+    width:fit-content;
+    margin:0 auto;
+  }
+
+  .footer-col.contact{
+    grid-column:1 / -1;
+    justify-self:center;
+    margin-top:60px;
+  }
+
+}
+@media(max-width:1024px){
+  .footer-inner {
+    padding-left:24px;
+    padding-right:24px;
+  }
+}
+
+
+ @media(max-width:768px){
+
+  .footer-inner{
+    padding-left:20px;
+    padding-right:20px;
+  }
+
+  .footer-grid{
+    grid-template-columns: auto;
+    width:fit-content;
+    margin:0 auto;
+    row-gap:48px;
+    justify-items:center;
+  }
+
+  .footer-brand{
+    width:288px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+  }
+
+  .footer-col{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+  }
+
+  .footer-col.abouts{ width:133px; }
+  .footer-col.company{ width:119px; }
+  .footer-col.contact{ width:288px; }
+
+  .description{
+    width:288px;
+    margin:20px auto 0;
+  }
+
+  .socials{
+    justify-content:center;
+  }
+
+}

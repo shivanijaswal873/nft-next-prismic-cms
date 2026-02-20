@@ -1,0 +1,195 @@
+{
+  "id": "collection_section",
+  "type": "SharedSlice",
+  "name": "CollectionSection",
+  "description": "CollectionSection",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "subtitle": {
+          "type": "StructuredText",
+          "config": {
+            "label": "subtitle",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "show_tabs": {
+          "type": "Boolean",
+          "config": {
+            "label": "show_tabs",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": false
+          }
+        },
+        "items": {
+          "type": "Group",
+          "config": {
+            "label": "items",
+            "repeat": true,
+            "fields": {
+              "nft_image": {
+                "type": "Image",
+                "config": {
+                  "label": "nft_image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "nft_title": {
+                "type": "Text",
+                "config": {
+                  "label": "nft_title",
+                  "placeholder": ""
+                }
+              },
+              "author": {
+                "type": "Text",
+                "config": {
+                  "label": "author",
+                  "placeholder": ""
+                }
+              },
+              "bid": {
+                "type": "Text",
+                "config": {
+                  "label": "bid",
+                  "placeholder": ""
+                }
+              },
+              "button_text": {
+                "type": "Select",
+                "config": {
+                  "label": "Button Text",
+                  "placeholder": "",
+                  "options": [
+                    "Sport",
+                    "Photograpy",
+                    "Pattern"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "featured",
+      "name": "featured ",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "subtitle": {
+          "type": "StructuredText",
+          "config": {
+            "label": "subtitle",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "show_tabs": {
+          "type": "Boolean",
+          "config": {
+            "label": "show_tabs",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": false
+          }
+        },
+        "items": {
+          "type": "Group",
+          "config": {
+            "label": "items",
+            "repeat": true,
+            "fields": {
+              "nft_image": {
+                "type": "Image",
+                "config": {
+                  "label": "nft_image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "nft_title": {
+                "type": "Text",
+                "config": {
+                  "label": "nft_title",
+                  "placeholder": ""
+                }
+              },
+              "author": {
+                "type": "Text",
+                "config": {
+                  "label": "author",
+                  "placeholder": ""
+                }
+              },
+              "bid": {
+                "type": "Text",
+                "config": {
+                  "label": "bid",
+                  "placeholder": ""
+                }
+              },
+              "button_text": {
+                "type": "Select",
+                "config": {
+                  "label": "Button Text",
+                  "placeholder": "",
+                  "options": [
+                    "Sport",
+                    "Photograpy",
+                    "Pattern"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "category": {
+          "type": "Select",
+          "config": {
+            "label": "category",
+            "placeholder": "",
+            "options": [
+              "featured",
+              "featured"
+            ]
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
