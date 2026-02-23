@@ -17,29 +17,29 @@ export default function AboutComponent({ data }: any) {
     <section className="about">
       <div className="about-container">
         <div className="about-header">
-          {isFilled.richText(data.title) && (
-            <PrismicRichText field={data.title} />
+          {isFilled?.richText(data?.title) && (
+            <PrismicRichText field={data?.title} />
           )}
-          {isFilled.richText(data.subtitle) && (
-            <PrismicRichText field={data.subtitle} />
+          {isFilled?.richText(data?.subtitle) && (
+            <PrismicRichText field={data?.subtitle} />
           )}
         </div>
 
         <div className="about-content">
-          {isFilled.image(data.image) && (
+          {isFilled?.image(data?.image) && (
             <div className="about-image" data-aos="fade-right">
-              <PrismicNextImage field={data.image} alt="" />
+              <PrismicNextImage field={data?.image} alt="" />
             </div>
           )}
 
           <div className="about-text" data-aos="fade-left">
-            {isFilled.richText(data.heading) && (
-              <PrismicRichText field={data.heading} />
+            {isFilled?.richText(data?.heading) && (
+              <PrismicRichText field={data?.heading} />
             )}
-            {isFilled.keyText(data.description) && <p>{data.description}</p>}
+            {isFilled?.keyText(data?.description) && <p>{data?.description}</p>}
 
-            {data.showButton && isFilled.keyText(data.buttonText) && (
-              <button className="about-btn">{data.buttonText}</button>
+            {data?.showButton && isFilled?.keyText(data?.buttonText) && (
+              <button className="about-btn">{data?.buttonText}</button>
             )}
           </div>
         </div>

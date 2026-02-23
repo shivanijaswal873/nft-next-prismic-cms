@@ -10,30 +10,30 @@ export type CollectionSectionProps =
 export default function CollectionSection({ slice }: CollectionSectionProps) {
   const items =
     slice.primary.items?.map((item) => ({
-      image: item.nft_image?.url ?? "",
-      title: item.nft_title ?? "",
-      name: item.author ?? "",
-      currentBid: item.bid ?? "",
-      category: item.button_text ?? "All",
+      image: item?.nft_image?.url ?? "",
+      title: item?.nft_title ?? "",
+      name: item?.author ?? "",
+      currentBid: item?.bid ?? "",
+      category: item?.button_text ?? "All",
     })) ?? [];
 
-  switch (slice.variation) {
+  switch (slice?.variation) {
     case "featured":
       return (
         <FeaturedClient
-          title={slice.primary.title}
-          subtitle={slice.primary.subtitle}
-          items={slice.primary.items}
+          title={slice?.primary?.title}
+          subtitle={slice?.primary?.subtitle}
+          items={slice?.primary?.items}
         />
       );
 
     default:
       return (
         <CollectionSectionUI
-          title={slice.primary.title}
-          subtitle={slice.primary.subtitle}
+          title={slice?.primary?.title}
+          subtitle={slice?.primary?.subtitle}
           items={items}
-          showTabs={slice.primary.show_tabs ?? false}
+          showTabs={slice?.primary?.show_tabs ?? false}
         />
       );
   }

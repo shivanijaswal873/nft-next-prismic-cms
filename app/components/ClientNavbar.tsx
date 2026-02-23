@@ -23,20 +23,20 @@ export default function ClientNavbar({ settings }: any) {
           <FiSearch className="search-icon" />
           <input
             type="text"
-            placeholder={settings.data.search_placeholder || "Search"}
+            placeholder={settings?.data?.search_placeholder || "Search"}
           />
         </div>
 
         <nav className={`nav-links ${menuOpen ? "open" : ""}`}>
-          {settings.data.navigation?.map((item: any, i: number) => (
-            <PrismicNextLink key={i} field={item.link} className="nav-link">
-              {item.label}
+          {settings?.data?.navigation?.map((item: any, i: number) => (
+            <PrismicNextLink key={i} field={item?.link} className="nav-link">
+              {item?.label}
             </PrismicNextLink>
           ))}
 
-          {isFilled.keyText(settings.data.wallet_text) && (
+          {isFilled.keyText(settings?.data?.wallet_text) && (
             <a href="#" className="wallet-btn">
-              {settings.data.wallet_text}
+              {settings?.data?.wallet_text}
             </a>
           )}
         </nav>

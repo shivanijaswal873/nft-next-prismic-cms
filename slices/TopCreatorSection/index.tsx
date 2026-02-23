@@ -18,12 +18,11 @@ const TopCreatorSection = ({ slice }: TopCreatorSectionProps) => {
   const subtitle = asText(slice.primary.subtitle);
 
   const creators: Creator[] = (slice.primary.creators ?? []).map((item) => ({
-    name: item.author ?? "",
-    // image: item.image?.url ?? "",
-    background: item.background_image?.url ?? "",
+    name: item?.author ?? "",  
+    background: item?.background_image?.url ?? "",
     image: item.image?.url ?? "",
-    text: item.text ?? "",
-    followed: item.followed ?? false,
+    text: item?.text ?? "",
+    followed: item?.followed ?? false,
   }));
 
   return (

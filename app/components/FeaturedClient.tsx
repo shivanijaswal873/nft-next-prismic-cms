@@ -6,52 +6,52 @@ import { isFilled } from "@prismicio/client";
 import "../styles/ImageworkSection.css";
 
 export default function FeaturedClient({ title,  subtitle, items = [] }: any) {
-  if (!isFilled.richText(title) && !items?.length) return null;
+  if (!isFilled?.richText(title) && !items?.length) return null;
 
   return (
     <section className="collection" id="feature">
       <div className="collection-container">
         <div className="collection-header">
-          {isFilled.richText(title) && <PrismicRichText field={title} />}
-          {isFilled.richText(subtitle) && <PrismicRichText field={subtitle} />}
+          {isFilled?.richText(title) && <PrismicRichText field={title} />}
+          {isFilled?.richText(subtitle) && <PrismicRichText field={subtitle} />}
         </div>
 
         <div className="collection-grid">
           {items.map(
             (item: any, index: number) =>
-              (isFilled.image(item.nft_image) ||
-                isFilled.keyText(item.author) ||
-                isFilled.richText(item.nft_title) ||
-                isFilled.keyText(item.bid)) && (
+              (isFilled?.image(item?.nft_image) ||
+                isFilled?.keyText(item?.author) ||
+                isFilled?.richText(item?.nft_title) ||
+                isFilled?.keyText(item?.bid)) && (
                 <div key={index} className="card">
-                  {isFilled.image(item.nft_image) && (
+                  {isFilled?.image(item?.nft_image) && (
                     <PrismicNextImage
-                      field={item.nft_image}
+                      field={item?.nft_image}
                       className="card-img"
                     />
                   )}
 
                   <div className="card-info">
                     <div className="top-row">
-                      {isFilled.keyText(item.author) && (
-                        <span className="artist-name">{item.author}</span>
+                      {isFilled?.keyText(item?.author) && (
+                        <span className="artist-name">{item?.author}</span>
                       )}
-                      {isFilled.keyText(item.bid) && (
+                      {isFilled.keyText(item?.bid) && (
                         <small className="bid-label">Current Bid</small>
                       )}
                     </div>
 
                     <div className="bottom-row">
-                      {isFilled.keyText(item.nft_title) && (
-                        <h4 className="card-title">{item.nft_title}</h4>
+                      {isFilled?.keyText(item?.nft_title) && (
+                        <h4 className="card-title">{item?.nft_title}</h4>
                       )}
 
-                      {isFilled.keyText(item.bid) && (
-                        <span className="bid-value">{item.bid}</span>
+                      {isFilled?.keyText(item?.bid) && (
+                        <span className="bid-value">{item?.bid}</span>
                       )}
                     </div>
 
-                    {isFilled.keyText(item.bid) && (
+                    {isFilled?.keyText(item?.bid) && (
                       <button className="bid-btn">Place a bid</button>
                     )}
                   </div>

@@ -33,22 +33,22 @@ export default function CreatorworkSection({
         <div className="top-grid" data-aos="fade-up">
           {creators?.map(
             (item, i) =>
-              (item.name || item.image || item.background || item.text) && (
+              (item?.name || item?.image || item?.background || item?.text) && (
                 <div
-                  className={`top-card ${item.followed ? "active" : ""}`}
+                  className={`top-card ${item?.followed ? "active" : ""}`}
                   key={i}
                 >
-                  {item.background && (
-                    <img src={item.background} className="bg" />
+                  {item?.background && (
+                    <img src={item?.background} className="bg" />
                   )}
-                  {item.image && <img src={item.image} className="user" />}
+                  {item?.image && <img src={item?.image} className="user" />}
 
-                  {item.name && <h3>{item.name}</h3>}
-                  {item.text && <p className="text">{item.text}</p>}
+                  {item?.name && <h3>{item?.name}</h3>}
+                  {item?.text && <p className="text">{item?.text}</p>}
 
-                  {(item.name || item.followed !== undefined) && (
+                  {(item?.name || item?.followed !== undefined) && (
                     <button className="btn">
-                      {item.followed ? "+ Followed" : "+ Follow"}
+                      {item?.followed ? "+ Followed" : "+ Follow"}
                     </button>
                   )}
                 </div>

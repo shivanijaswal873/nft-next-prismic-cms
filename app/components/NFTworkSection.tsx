@@ -9,16 +9,16 @@ type Props = {
 };
 
 export default function NFTworkSection({ title, button_text }: Props) {
-  if (!isFilled.richText(title) && !isFilled.keyText(button_text)) return null;
+  if (!isFilled?.richText(title) && !isFilled?.keyText(button_text)) return null;
 
   return (
     <section className="NFT-section">
       <div className="NFT-box">
-        {isFilled.richText(title) && (
+        {isFilled?.richText(title) && (
             <PrismicRichText field={title} />
         )}
 
-        {isFilled.keyText(button_text) && (
+        {isFilled?.keyText(button_text) && (
           <button className="NFT-btn">{button_text}</button>
         )}
       </div>

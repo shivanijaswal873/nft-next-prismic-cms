@@ -6,7 +6,7 @@ import PrismicNavbar from "./components/PrismicNavbar";
 export default async function Page() {
   const client = createClient();
 
-  const page = await client.getByUID("dashboard", "dashboard");
+  const page = await client.getByUID("dashboard", "homepage");
   console.log("PRISMIC SLICES => ", page.data.slices);
 
   return (

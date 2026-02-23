@@ -32,13 +32,13 @@ export default function LogoSlider({ logos }: any) {
   return (
     <section className="partners">
       <div ref={sliderRef} className="keen-slider">
-        {logos.map((item: any, i: number) =>
-          isFilled.image(item.logosection) ? (
+        {logos?.map((item: any, i: number) =>
+          isFilled?.image(item?.logosection) ? (
             <div key={i} className="keen-slider__slide">
               <PrismicNextImage
-                field={item.logosection}
-                alt={item.alt_text || "logo"}
-                className={`partner-logo ${item.size || ""}`}
+                field={item?.logosection}
+                alt={item?.alt_text || "logo"}
+                className={`partner-logo ${item?.size || ""}`}
               />
             </div>
           ) : null,

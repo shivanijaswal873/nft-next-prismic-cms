@@ -51,17 +51,17 @@ export default function Footer({
 
         {sections?.map((section, i) => (
           <div className="footer-col" key={i}>
-            <h4>{section.section_title}</h4>
+            <h4>{section?.section_title}</h4>
 
             <ul>
-              {section.links?.map((link, j) => (
+              {section?.links?.map((link, j) => (
                 <li key={j}>
-                  {link.link_url ? (
-                    <PrismicLink field={link.link_url}>
-                      {link.link_label}
+                  {link?.link_url ? (
+                    <PrismicLink field={link?.link_url}>
+                      {link?.link_label}
                     </PrismicLink>
                   ) : (
-                    <span>{link.link_label}</span>
+                    <span>{link?.link_label}</span>
                   )}
                 </li>
               ))}
@@ -72,13 +72,13 @@ export default function Footer({
         <div className="footer-col contact">
           <h4>Contact</h4>
 
-          {isFilled.keyText(phone) && (
+          {isFilled?.keyText(phone) && (
             <p>
               <a href={`tel:${phone}`}>{phone}</a>
             </p>
           )}
 
-          {isFilled.keyText(email) && (
+          {isFilled?.keyText(email) && (
             <p>
               <a href={`mailto:${email}`}>{email}</a>
             </p>
@@ -86,7 +86,7 @@ export default function Footer({
         </div>
       </div>
 
-      {isFilled.keyText(copyright) && (
+      {isFilled?.keyText(copyright) && (
         <div className="footer-bottom">{copyright}</div>
       )}
     </footer>

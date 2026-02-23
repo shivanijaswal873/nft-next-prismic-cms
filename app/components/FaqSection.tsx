@@ -33,30 +33,30 @@ export default function FAQSection({ title, subtitle, faqs }: Props) {
   return (
     <section className="faq-bg" id="faq">
       <div className="faq-box">
-        {isFilled.richText(title) && <PrismicRichText field={title} />}
+        {isFilled?.richText(title) && <PrismicRichText field={title} />}
 
-        {isFilled.richText(subtitle) && <PrismicRichText field={subtitle} />}
+        {isFilled?.richText(subtitle) && <PrismicRichText field={subtitle} />}
 
         <div className="faq-grid">
-          {validFaqs.map((faq, index) => (
+          {validFaqs?.map((faq, index) => (
             <div className="faq-item" key={index}>
               <div className="faq-row" onClick={() => toggleFAQ(index)}>
-                {isFilled.keyText(faq.question) && (
-                  <span className="faq-question">{faq.question}</span>
+                {isFilled?.keyText(faq?.question) && (
+                  <span className="faq-question">{faq?.question}</span>
                 )}
 
-                {isFilled.richText(faq.answer) && (
+                {isFilled?.richText(faq?.answer) && (
                   <span className="faq-icon">
                     {activeIndex === index ? "–" : "+"}
                   </span>
                 )}
               </div>
 
-              {isFilled.richText(faq.answer) && (
+              {isFilled?.richText(faq?.answer) && (
                 <div
                   className={`faq-answer ${activeIndex === index ? "open" : ""}`}
                 >
-                  <PrismicRichText field={faq.answer} />
+                  <PrismicRichText field={faq?.answer} />
                 </div>
               )}
             </div>
